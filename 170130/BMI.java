@@ -7,11 +7,11 @@ public class BMI{
        double bmi;
        bmi= wg/(wz*wz);
          if ( bmi<18.5)
-           System.out.println("Niedowaga :( .Twoje Bmi to "+bmi);
+           System.out.println("NIEDOWAGA .Twoje Bmi to "+bmi);
          else if ( bmi >18.5 && bmi<24.99)
-                System.out.println("waga prawidłowa :) .Twoje Bmi to "+bmi);
+                System.out.println("WAGA PRAWIDŁOWA .Twoje Bmi to "+bmi);
               else 
-               System.out.println("nadwaga :( .Twoje Bmi to "+bmi);
+               System.out.println("NADWAGA .Twoje Bmi to "+bmi);
           
         }
         else 
