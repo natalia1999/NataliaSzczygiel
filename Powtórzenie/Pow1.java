@@ -13,7 +13,17 @@ public class Pow1{
         }
     return s;
     }
-    
+    String bin(int d){
+
+   String text = "";
+     while(d>0){
+        text=text + (char)(d%2 + 48);     
+        d=d/2;
+        }
+        String reverse = new StringBuffer(text).reverse().toString(); 
+        return reverse;
+    }
+        
      
     public static void main(String [] args) throws FileNotFoundException{
         PrintWriter zapis = new PrintWriter("powt.txt");
@@ -21,19 +31,20 @@ public class Pow1{
         Scanner in = new Scanner(file); 
         Pow1 funkcje = new Pow1();
         int a=0;
-        int max=0;
+        int liczba=in.nextInt();
+        int n=funkcje.sumacyfr(liczba);
+        int liczbamax=liczba;
+        zapis.println("b) ");         
         while(in.hasNextLine()){
            String text=in.nextLine();
-           int liczba=Integer.parseInt(text);
+           zapis.println(liczba+" "+funkcje.bin(liczba));
+             liczba=in.nextInt();
            if(liczba%2==0)
            a++;
-           if(funkcje.sumacyfr(liczba)>max)
-           max=funkcje.sumacyfr(liczba);
-           
-           System.out.println("liczba dziesiętna "+ Integer.parseInt( text , 2 ));
+           if(funkcje.sumacyfr(liczba)>n)
+           {n=funkcje.sumacyfr(liczba); liczbamax=liczba;}
         }
         zapis.println("a) "+a);
-        zapis.println("b) "+max);
         zapis.println("c) ");
         zapis.println("d) ");
         zapis.close();
